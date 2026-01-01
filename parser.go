@@ -8,14 +8,6 @@ import (
 	"strings"
 )
 
-// Parser represents a NIML file parser.
-type Parser struct{}
-
-// NewParser creates a new instance of the NIML parser.
-func NewParser() Parser {
-	return Parser{}
-}
-
 // Parse Reads a NIML file at the specified path and populates the provided struct.
 // The config parameter must be a pointer to a struct.
 // Struct fields can use the `niml:"key"` tag to specify the key name in the file.
@@ -30,7 +22,7 @@ func NewParser() Parser {
 //
 //	var cfg Config
 //	err := parser.Parse("config.niml", &cfg)
-func (Parser) Parse(path string, config interface{}) error {
+func Parse(path string, config interface{}) error {
 	v := reflect.ValueOf(config)
 	if v.Kind() != reflect.Ptr || v.Elem().Kind() != reflect.Struct {
 		return fmt.Errorf("config must be a pointer to struct")
