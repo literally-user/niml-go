@@ -1,4 +1,4 @@
-package internal
+package niml
 
 import (
 	"fmt"
