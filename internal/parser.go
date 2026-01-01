@@ -1,4 +1,4 @@
-package niml_go
+package internal
 
 import (
 	"fmt"
