@@ -21,7 +21,7 @@ import (
 //	}
 //
 //	var cfg Config
-//	err := parser.Parse("config.niml", &cfg)
+//	err := niml.Parse("config.niml", &cfg)
 func Parse(path string, config interface{}) error {
 	v := reflect.ValueOf(config)
 	if v.Kind() != reflect.Ptr || v.Elem().Kind() != reflect.Struct {
